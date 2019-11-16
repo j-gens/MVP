@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-
+      navigationBar: ['Home', 'Quiz', 'Routine', 'Products', 'Ingredients'],
+      currentDisplay: 'Home'
     }
 
     this.fetch = this.fetch.bind(this);
@@ -28,7 +29,7 @@ class App extends React.Component {
           <div className="header-title">
             Skintopeia
           </div>
-          <Navigation />
+          <Navigation bar={this.state.navigationBar} length={this.state.navigationBar.length} />
         </div>
         <div className="content-bin">Content</div>
       </div>
