@@ -1,0 +1,23 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-gens/MVP.git"
+  },
+  "author": "j-gens",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
