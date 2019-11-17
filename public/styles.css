@@ -1,5 +1,5 @@
 body {
-  background-color: #BCBABE;
+  background-color: #9A9EAB;
 }
 
 .header-bin {
@@ -12,10 +12,11 @@ body {
   color: #021C1E;
   padding: 5px;
   width: 90%;
+  border-radius: 10px;
 }
 
 .header-title {
-  color: #1995AD;
+  color: #6495ED;
   text-align: center;
   font-size: 40px;
   font-weight: 600;
@@ -24,7 +25,12 @@ body {
 .header-navigation {
   display: flex;
   margin-top: 10px;
+  margin-bottom: 10px;
   justify-content: center;
+}
+
+.nav-duet {
+  display: flex;
 }
 
 .nav-item {
@@ -32,25 +38,29 @@ body {
   margin-left: 10px;
   font-weight: 600;
   font-size: 20px;
-  color: #1995AD;
+  color: #6495ED;
 }
 
 .content-bin {
+  display: flex;
+  justify-content: center;
   background-color: #F1F1F2;
   color: #021C1E;
   padding: 5px;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
+  border-radius: 10px;
 }
 
 /*
 component background #F1F1F2 (off-white)
 font color #021C1E (almost-black)
-header color #1995AD (blue)
+>>> header color #1995AD (blue green)
+header #6495ED (cornflower)
 accent color #EC96A4 (muted pink)
 >>> accent color2 #DFE166 (muted yellow-green)
-body background #BCBABE (soft gray)
->>> b bg #9A9EAB (lavender gray)
->>> header? #5D535E (muted purple brown)
+>>> b bg #BCBABE (soft gray)
+b bg #9A9EAB (lavender gray)
+>>> header? #4C3F54 (muted dark purple)
 */
