@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const arenaSchema = new Schema({
+const arenaSchema = mongoose.Schema({
   _id: Number,
   arenaName: String,
   city: String,
@@ -8,7 +8,7 @@ const arenaSchema = new Schema({
   team: String
 })
 
-const userListSchema = new Schema({
+const userListSchema = mongoose.Schema({
   _id: Number,
   _userName: String,
   list: [{
