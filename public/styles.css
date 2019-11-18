@@ -1,66 +1,63 @@
 body {
-  background-color: #9A9EAB;
+  background-color: lightgray;
 }
 
 .header-bin {
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90px;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5px;
-  background-color: #F1F1F2;
-  color: #021C1E;
-  padding: 5px;
-  width: 90%;
-  border-radius: 10px;
 }
 
 .header-title {
-  color: #6495ED;
   text-align: center;
+  color: teal;
   font-size: 40px;
   font-weight: 600;
-}
-
-.header-navigation {
-  display: flex;
-  margin-top: 10px;
   margin-bottom: 10px;
-  justify-content: center;
 }
 
-.nav-duet {
+.header-nav-bin {
   display: flex;
-}
-
-.nav-item {
-  margin-right: 10px;
-  margin-left: 10px;
-  font-weight: 600;
+  justify-content: center;
+  color: black;
   font-size: 20px;
-  color: #6495ED;
+  margin-bottom: 10px;
 }
 
 .content-bin {
-  display: flex;
-  justify-content: center;
-  background-color: #F1F1F2;
-  color: #021C1E;
-  padding: 5px;
+  margin-top: 100px;
+  background-color: whitesmoke;
+
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-  border-radius: 10px;
 }
 
-/*
-component background #F1F1F2 (off-white)
-font color #021C1E (almost-black)
->>> header color #1995AD (blue green)
-header #6495ED (cornflower)
-accent color #EC96A4 (muted pink)
->>> accent color2 #DFE166 (muted yellow-green)
->>> b bg #BCBABE (soft gray)
-b bg #9A9EAB (lavender gray)
->>> header? #4C3F54 (muted dark purple)
-*/
+.list-bin {
+  margin-top: 10px;
+  background-color: whitesmoke;
+
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list-user-bin {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-content-bin {
+  width: 60%;
+  display: flex;
+}
