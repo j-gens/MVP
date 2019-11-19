@@ -64,7 +64,12 @@ app.post('/api/lists', (req, res) => {
 })
 
 app.delete('/api/', (req, res) => {
-
+  models.removeOneFromList(req.body.arenaName, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.status(200).send(data);
+  })
 })
 
 app.listen(port, () => console.log('listening...'))

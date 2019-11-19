@@ -37,8 +37,8 @@ exports.saveArenaToList = (list, callback) => {
   })
 }
 
-exports.deleteArenaFromList = (arena, callback) => {
-
+exports.removeOneFromList = (arena, callback) => {
+  schema.UserList.findOneAndDelete({arenaName: arena}).exec(callback);
 }
 
 
