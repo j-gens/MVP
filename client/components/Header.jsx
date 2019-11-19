@@ -12,10 +12,10 @@ class Header extends React.Component {
     return (
       <div className="header-bin">
         <div className="header-title">
-          Fear the Fin
+          Ice Bucket List
         </div>
         <div className="header-nav-bin">
-          testing
+          KEEP TRACK OF ALL THE NHL ARENAS YOU'VE VISITED
         </div>
       </div>
     )
