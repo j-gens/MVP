@@ -11,6 +11,7 @@ body {
   left: 0;
   height: 90px;
   width: 100%;
+  z-index: 50;
 
   display: flex;
   flex-direction: column;
@@ -38,14 +39,36 @@ body {
   background-color: rgba(245, 245, 245, 0.7);
   border-radius: 10px;
 
+  display: flex;
+  justify-content: space-evenly;
+
   padding: 10px;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.content-image {
+  width: 625px;
+  object-fit: contain;
+  margin-top: 50px;
+}
+
+.content-image img {
+  width: 100%;
+}
+
+.content-image-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  overflow: scroll;
 }
 
 .list-bin {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: rgba(245, 245, 245, 0.7);
 
   width: 95%;
@@ -75,6 +98,14 @@ body {
   margin-bottom: 5px;
 }
 
+.list-user-title-top {
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .list-user-entry {
   font-size: 20px;
   margin-top: 5px;
@@ -89,6 +120,39 @@ body {
   width: 60%;
   display: flex;
   margin-top: 5px;
+}
+
+.content-list-top {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.content-list-table-header-top {
+  background-color: black;
+}
+
+.content-list-table-header-top td {
+  width: 25%;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.content-list-table-row-top td {
+  margin: 5px;
+  padding: 5px;
+}
+
+.content-list-table-row-top:hover {
+  background-color:  rgba(3, 102, 194, 0.2);
+}
+
+table {
+  background-color:  rgba(245, 245, 245, 0.7);
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .content-form {
@@ -161,12 +225,36 @@ button {
 
 .content-list-table-row:hover {
   background-color:  rgba(32, 199, 199, 0.2);
+  display: table-row;
 }
 
-table {
-  background-color:  rgba(245, 245, 245, 0.7);
-  padding: 10px;
-  width: 100%;
-  border-radius: 10px;
+.row-hover-button {
+  display: none;
+}
+
+.linebreak {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+hr {
+  border-width: 3px;
+  border-style: double;
+}
+
+
+.user-form {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.user-form input {
+  margin-left: 7px;
+  margin-right: 7px;
+  padding: 7px;
+}
+
+.user-form button {
+  padding: 7px;
 }
 
