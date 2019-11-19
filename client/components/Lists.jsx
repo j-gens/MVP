@@ -8,15 +8,16 @@ class Lists extends React.Component {
     super(props);
     this.state = {
       arenas: [],
-      users: ['jules', 'user1', 'hello'],
-      usersData: [],
-      currentUser: 'createNew'
+      users: [],
+      currentUser: '',
+      newUser: ''
     }
 
     this.fetchArenas = this.fetchArenas.bind(this);
     this.fetchUsers = this.fetchUsers.bind(this);
+    this.postUser = this.postUser.bind(this);
     this.changeView = this.changeView.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   fetchArenas() {
@@ -36,17 +37,38 @@ class Lists extends React.Component {
   }
 
   fetchUsers() {
-    axios.get('api/users')
+    axios.get('/api/users')
       .then((response) => {
+        console.log('response ', response)
+        let userList = [];
+        for (let i = 0; i < response.data.length; i++) {
+          userList.push(response.data[i].username);
+        }
         this.setState({
-          users: response.data
+          users: userList
         })
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        console.log('success'. this.state.users);
+        console.log('user success', this.state.users);
+      })
+  }
+
+  postUser() {
+    event.preventDefault();
+    axios.post('/api/users', {userName: this.state.newUser})
+      .then((response) => {
+        this.fetchUsers();
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        this.setState({
+          newUser: ''
+        })
       })
   }
 
@@ -60,9 +82,9 @@ class Lists extends React.Component {
     })
   }
 
-  handleClick(event) {
+  handleChange(event) {
     this.setState({
-      currentUser: event.target.value
+      newUser: event.target.value
     })
   }
 
@@ -74,10 +96,14 @@ class Lists extends React.Component {
             Current Users:
           </div>
           <div>
-            <div className="list-user-entry" value="createNew" onClick={this.handleClick}>
-              Create a New User
-            </div>
             <Users users={this.state.users} changeView={this.changeView} />
+            <form>
+              <label>
+                Create New:
+                <input type="text" name="user" onChange={this.handleChange} />
+              </label>
+              <button onClick={this.postUser}>Submit</button>
+            </form>
           </div>
         </div>
         <div className="list-content-bin">
