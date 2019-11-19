@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class ContentForm extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ContentForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.findHomeTeam = this.findHomeTeam.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -42,9 +43,9 @@ class ContentForm extends React.Component {
     }
   }
 
-  handleSubmit(event) {
+  handleFormSubmit(event) {
     event.preventDefault();
-    axios.post('/api/users', {
+    axios.post('/api/lists', {
       userName: this.props.user,
       arenaName: this.state.arena,
       homeTeam: this.state.home,
@@ -52,7 +53,7 @@ class ContentForm extends React.Component {
       date: this.state.date
       })
       .then((response) => {
-        this.props.getUser();
+        this.props.getListByUser(this.props.user);
       })
       .catch((err) => {
         console.log(err);
@@ -86,10 +87,10 @@ class ContentForm extends React.Component {
             </select>
           </label>
           <label>
-            Date of Visit (mm/dd/yy):
+            Date of Visit (mm/dd/yyyy):
             <input type="text" name="date" onChange={this.handleChange} />
           </label>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>
     );
