@@ -10,6 +10,7 @@ class Lists extends React.Component {
       arenas: [],
       users: [],
       currentUser: '',
+      currentUserList: [],
       newUser: ''
     }
 
@@ -18,6 +19,7 @@ class Lists extends React.Component {
     this.postUser = this.postUser.bind(this);
     this.changeView = this.changeView.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.fetchUserList = this.fetchUserList.bind(this);
   }
 
   fetchArenas() {
@@ -45,7 +47,8 @@ class Lists extends React.Component {
           userList.push(response.data[i].username);
         }
         this.setState({
-          users: userList
+          users: userList,
+          currentUser: userList[0]
         })
       })
       .catch((err) => {
@@ -79,7 +82,24 @@ class Lists extends React.Component {
   changeView(name) {
     this.setState({
       currentUser: name
-    })
+    });
+    this.fetchUserList(name);
+  }
+
+  fetchUserList(name) {
+    name = name || this.state.currentUser;
+    axios.get('/api/lists/' + name)
+      .then((response) => {
+        this.setState({
+          currentUserList: response.data
+        })
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log('user list ', this.state.currentUserList);
+      })
   }
 
   handleChange(event) {
@@ -107,7 +127,7 @@ class Lists extends React.Component {
           </div>
         </div>
         <div className="list-content-bin">
-          <ListContent currentUser={this.state.currentUser} arenas={this.state.arenas} />
+          <ListContent currentUser={this.state.currentUser} currentList={this.state.currentUserList} getUser={this.fetchUserList} arenas={this.state.arenas} />
         </div>
       </div>
     )
