@@ -21,17 +21,6 @@ app.get('/api/arenas/', (req, res) => {
   })
 })
 
-//NOT USED YET - get details for an individual arena
-// app.get('/api/arena/:arenaId', (req, res) => {
-//   console.log('single arena id => ', req.params.arenaId);
-//   models.getOneArena(req.params.arenaId, (err, data) => {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//     res.status(200).send(data);
-//   })
-// })
-
 //get list of all users in database
 app.get('/api/users', (req, res) => {
   models.getAllUsers((err, data) => {
@@ -44,6 +33,7 @@ app.get('/api/users', (req, res) => {
 
 //save a new user to the database
 app.post('/api/users', (req, res) => {
+  console.log('post to users ', req.body.userName)
   models.saveUser(req.body.userName, (err, data) => {
     if (err) {
       res.status(500).send(err);
@@ -54,7 +44,7 @@ app.post('/api/users', (req, res) => {
 
 //get a user's list of arenas visited
 app.get('/api/lists/:username', (req, res) => {
-  models.getListbyUser(req.params.username, (err, data) => {
+  models.getListByUser(req.params.username, (err, data) => {
     if (err) {
       res.status(500).send(err);
     }
@@ -63,7 +53,8 @@ app.get('/api/lists/:username', (req, res) => {
 })
 
 //update a current user's list
-app.put('/api/lists', (req, res) => {
+app.post('/api/lists', (req, res) => {
+  console.log('is this the data' , req.body)
   models.saveArenaToList(req.body, (err, data) => {
     if (err) {
       res.status(500).send(err);
