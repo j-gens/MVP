@@ -3,7 +3,7 @@ import ListContentEntry from './ContentEntry.jsx';
 import ContentForm from './ContentForm.jsx';
 
 const ListContent = (props) => (
-  <div className="content-list">
+  <div className="content-list-top">
       <div className="arena-form-title">
         {props.currentUser}'s List ({props.currentList.length} out of 31):
       </div>

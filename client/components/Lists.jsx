@@ -18,7 +18,7 @@ class Lists extends React.Component {
     this.fetchUsers = this.fetchUsers.bind(this);
     this.postUser = this.postUser.bind(this);
     this.changeView = this.changeView.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleUserChange = this.handleUserChange.bind(this);
     this.fetchUserList = this.fetchUserList.bind(this);
   }
 
@@ -44,7 +44,7 @@ class Lists extends React.Component {
         console.log('response ', response)
         let userList = [];
         for (let i = 0; i < response.data.length; i++) {
-          userList.push(response.data[i].username);
+          userList.push(response.data[i].userName);
         }
         this.setState({
           users: userList,
@@ -55,6 +55,7 @@ class Lists extends React.Component {
         console.log(err);
       })
       .finally(() => {
+        this.fetchUserList(this.state.currentUser);
         console.log('user success', this.state.users);
       })
   }
@@ -87,8 +88,7 @@ class Lists extends React.Component {
   }
 
   fetchUserList(name) {
-    name = name || this.state.currentUser;
-    axios.get('/api/lists/' + name)
+    axios.get(`/api/lists/${name}`)
       .then((response) => {
         this.setState({
           currentUserList: response.data
@@ -102,10 +102,10 @@ class Lists extends React.Component {
       })
   }
 
-  handleChange(event) {
+  handleUserChange(event) {
     this.setState({
       newUser: event.target.value
-    })
+    });
   }
 
   render() {
@@ -116,18 +116,20 @@ class Lists extends React.Component {
             Current Users:
           </div>
           <div>
+            <div className="linebreak"><hr></hr></div>
             <Users users={this.state.users} changeView={this.changeView} />
-            <form>
+            <div className="linebreak"><hr></hr></div>
+            <form className="user-form">
               <label>
                 Create New:
-                <input type="text" name="user" onChange={this.handleChange} />
+                <input type="text" name="user" onChange={this.handleUserChange} />
               </label>
               <button onClick={this.postUser}>Submit</button>
             </form>
           </div>
         </div>
         <div className="list-content-bin">
-          <ListContent currentUser={this.state.currentUser} currentList={this.state.currentUserList} getUser={this.fetchUserList} arenas={this.state.arenas} />
+          <ListContent currentUser={this.state.currentUser} currentList={this.state.currentUserList} getListByUser={this.fetchUserList} arenas={this.state.arenas} />
         </div>
       </div>
     )

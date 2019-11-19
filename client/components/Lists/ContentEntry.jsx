@@ -6,6 +6,7 @@ const ListContentEntry = (props) => (
     <td>{props.arena.homeTeam}</td>
     <td>{props.arena.awayTeam}</td>
     <td>{props.arena.date}</td>
+    <td className="row-hover-button">X</td>
   </tr>
 )
 
