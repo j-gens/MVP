@@ -4,15 +4,17 @@ class UsersEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: this.props.user
+      user: ''
     }
-
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event) {
-    console.log(event.target)
-    this.props.changeView(event.target.value);
+  handleClick(e) {
+    this.setState({
+      user: this.props.user
+    })
+
+    this.props.changeView(this.props.user);
   }
 
   render() {
