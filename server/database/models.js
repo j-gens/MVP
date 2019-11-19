@@ -5,16 +5,6 @@ exports.getAllArenas = (callback) => {
   schema.Arena.find({}).exec(callback);
 }
 
-// exports.getOneArena = (arenaId, callback) => {
-//   schema.Arena.find({_id: arenaId}).exec(callback);
-// }
-
-exports.getListByUser = (user, callback) => {
-  schema.UserList.find({username: user}, (err, data) => {
-    callback(err, data);
-  })
-}
-
 exports.getAllUsers = (callback) => {
   schema.User.find({}, (err, data) => {
     callback(err, data);
@@ -28,6 +18,10 @@ exports.saveUser = (user, callback) => {
   newUser.save((err, data) => {
     callback(err, data);
   })
+}
+
+exports.getListByUser = (user, callback) => {
+  schema.UserList.find({userName: user}).exec(callback);
 }
 
 exports.saveArenaToList = (list, callback) => {

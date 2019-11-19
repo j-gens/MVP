@@ -17,7 +17,7 @@ const userListSchema = mongoose.Schema({
 })
 
 const userSchema = mongoose.Schema({
-  username: String
+  userName: String
 })
 
 
