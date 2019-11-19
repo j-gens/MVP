@@ -8,16 +8,12 @@ const arenaSchema = mongoose.Schema({
   team: String
 })
 
-const userListArenas = mongoose.Schema({
+const userListSchema = mongoose.Schema({
+  userName: String,
   arenaName: String,
   date: String,
   homeTeam: String,
   awayTeam: String
-})
-
-const userListSchema = mongoose.Schema({
-  _userName: String,
-  list: [userListArenas]
 })
 
 const userSchema = mongoose.Schema({
