@@ -8,22 +8,27 @@ const arenaSchema = mongoose.Schema({
   team: String
 })
 
+const userListArenas = mongoose.Schema({
+  arenaName: String,
+  date: String,
+  homeTeam: String,
+  awayTeam: String
+})
+
 const userListSchema = mongoose.Schema({
-  _id: Number,
   _userName: String,
-  list: [{
-    arenaName: String,
-    dateDay: Number,
-    dateMo: Number,
-    dateYr: Number,
-    homeTeam: String,
-    awayTeam: String
-  }]
+  list: [userListArenas]
+})
+
+const userSchema = mongoose.Schema({
+  username: String
 })
 
 
 const Arena = mongoose.model('Arena', arenaSchema);
 const UserList = mongoose.model('UserList', userListSchema);
+const User = mongoose.model('User', userSchema)
 
 module.exports.Arena = Arena;
 module.exports.UserList = UserList;
+module.exports.User = User;
