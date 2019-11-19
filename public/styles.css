@@ -1,9 +1,11 @@
 body {
   background-color: lightgray;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-image: url("https://insidehockey.com/wp-content/uploads/2014/09/ice-background.jpg");
 }
 
 .header-bin {
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.9);
   position: fixed;
   top: 0;
   left: 0;
@@ -26,13 +28,13 @@ body {
   display: flex;
   justify-content: center;
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .content-bin {
   margin-top: 100px;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.7);
 
   width: 95%;
   margin-left: auto;
@@ -41,7 +43,7 @@ body {
 
 .list-bin {
   margin-top: 10px;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.7);
 
   width: 95%;
   margin-left: auto;
@@ -55,9 +57,77 @@ body {
   width: 30%;
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.list-user-title {
+  color: teal;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.list-user-entry {
+  font-size: 16px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .list-content-bin {
   width: 60%;
   display: flex;
+  margin-top: 5px;
 }
+
+.content-form {
+  margin: 10px;
+  padding: 10px;
+  border: solid 3px blue;
+}
+
+.arena-form-title {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: teal;
+  font-weight: 600;
+}
+
+.arena-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.arena-form label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 30px;
+  padding: 5px;
+}
+
+button {
+  background-color: rgb(32, 199, 199);
+  padding: 5px;
+}
+
+.content-list {
+  width: 100%;
+}
+
+.content-list-table-header {
+  background-color: rgb(32, 199, 199);
+}
+
+.content-list-table-header td {
+  width: 25%;
+  padding: 5px;
+}
+
+.content-list.table-row td {
+  padding: 5px;
+  margin-bottom: 3px;
+}
+
