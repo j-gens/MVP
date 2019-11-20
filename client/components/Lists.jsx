@@ -72,7 +72,7 @@ class Lists extends React.Component {
       .finally(() => {
         this.setState({
           newUser: ''
-        })
+        });
       })
   }
 
