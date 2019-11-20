@@ -144,6 +144,12 @@ body {
   padding: 5px;
 }
 
+.content-list-table-row-top a {
+  color: teal;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 .content-list-table-row-top:hover {
   background-color:  rgba(3, 102, 194, 0.2);
 }
