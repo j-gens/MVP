@@ -2,10 +2,11 @@ import React from 'react';
 import ListContentEntry from './ContentEntry.jsx';
 import ContentForm from './ContentForm.jsx';
 
-const ListContent = (props) => (
+
+const ListContent = ({ currentUser, currentList, ...otherProps }) => (
   <div className="content-list-top">
       <div className="arena-form-title">
-        {props.currentUser}'s List ({props.currentList.length} out of 31):
+        {currentUser}'s List ({currentList.length} out of 31):
       </div>
       <div>
       <table>
@@ -16,13 +17,13 @@ const ListContent = (props) => (
           <td>Date of Visit</td>
         </thead>
         <tbody>
-          {props.currentList.map(arena =>
+          {currentList.map(arena =>
             <ListContentEntry arena={arena} />
           )}
         </tbody>
       </table>
     </div>
-    <ContentForm getListByUser={props.getListByUser} user={props.currentUser} arenas={props.arenas} />
+    <ContentForm user={currentUser} {...otherProps} />
   </div>
 )
 
