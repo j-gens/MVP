@@ -3,6 +3,7 @@ import axios from 'axios';
 import Users from './Lists/Users.jsx';
 import ListContent from './Lists/Content.jsx';
 
+
 class Lists extends React.Component {
   constructor(props) {
     super(props);
@@ -13,16 +14,9 @@ class Lists extends React.Component {
       currentUserList: [],
       newUser: ''
     }
-
-    this.fetchArenas = this.fetchArenas.bind(this);
-    this.fetchUsers = this.fetchUsers.bind(this);
-    this.postUser = this.postUser.bind(this);
-    this.changeView = this.changeView.bind(this);
-    this.handleUserChange = this.handleUserChange.bind(this);
-    this.fetchUserList = this.fetchUserList.bind(this);
   }
 
-  fetchArenas() {
+  fetchArenas = () => {
     axios.get('/api/arenas/')
       .then((response) => {
         this.setState({
@@ -33,15 +27,13 @@ class Lists extends React.Component {
         console.log(err);
       })
       .finally(() => {
-        console.log('success', this.state.arenas);
         this.fetchUsers();
       })
   }
 
-  fetchUsers() {
+  fetchUsers = () => {
     axios.get('/api/users')
       .then((response) => {
-        console.log('response ', response)
         let userList = [];
         for (let i = 0; i < response.data.length; i++) {
           userList.push(response.data[i].userName);
@@ -56,13 +48,13 @@ class Lists extends React.Component {
       })
       .finally(() => {
         this.fetchUserList(this.state.currentUser);
-        console.log('user success', this.state.users);
       })
   }
 
-  postUser() {
+  postUser = () => {
+    const { newUser } = this.state;
     event.preventDefault();
-    axios.post('/api/users', {userName: this.state.newUser})
+    axios.post('/api/users', {userName: newUser})
       .then((response) => {
         this.fetchUsers();
       })
@@ -76,18 +68,17 @@ class Lists extends React.Component {
       })
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.fetchArenas();
   }
 
-  changeView(name) {
+  changeView = (name) => {
     this.setState({
       currentUser: name
-    });
-    this.fetchUserList(name);
+    }, () => this.fetchUserList(name));
   }
 
-  fetchUserList(name) {
+  fetchUserList = (name) => {
     axios.get(`/api/lists/${name}`)
       .then((response) => {
         this.setState({
@@ -97,18 +88,17 @@ class Lists extends React.Component {
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => {
-        console.log('user list ', this.state.currentUserList);
-      })
   }
 
-  handleUserChange(event) {
+  handleUserChange = (event) => {
+    const { value } = event.target;
     this.setState({
-      newUser: event.target.value
+      newUser: value
     });
   }
 
-  render() {
+  render = () => {
+    const { users, currentUser, currentUserList, arenas } = this.state;
     return (
       <div className="list-bin">
         <div className="list-user-bin">
@@ -117,7 +107,7 @@ class Lists extends React.Component {
           </div>
           <div>
             <div className="linebreak"><hr></hr></div>
-            <Users users={this.state.users} changeView={this.changeView} />
+            <Users users={users} changeView={this.changeView} />
             <div className="linebreak"><hr></hr></div>
             <form className="user-form">
               <label>
@@ -129,11 +119,12 @@ class Lists extends React.Component {
           </div>
         </div>
         <div className="list-content-bin">
-          <ListContent currentUser={this.state.currentUser} currentList={this.state.currentUserList} getListByUser={this.fetchUserList} arenas={this.state.arenas} />
+          <ListContent currentUser={currentUser} currentList={currentUserList} getListByUser={this.fetchUserList} arenas={arenas} />
         </div>
       </div>
     )
   }
 }
+
 
 export default Lists;
