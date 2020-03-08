@@ -1,7 +1,8 @@
 import React from 'react';
 import ArenaListEntry from './ArenaListEntry.jsx';
 
-const ArenaList = (props) => (
+
+const ArenaList = ({ arenas }) => (
   <div className="content-list-top">
     <table>
       <thead className="content-list-table-header-top">
@@ -11,13 +12,13 @@ const ArenaList = (props) => (
         <td>State/Province</td>
       </thead>
       <tbody>
-        {props.arenas.map(arena =>
+        {arenas.map(arena =>
           <ArenaListEntry arena={arena} />
         )}
       </tbody>
     </table>
   </div>
-)
+);
 
 
 export default ArenaList;
