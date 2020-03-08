@@ -1,26 +1,26 @@
 import React from 'react';
 
+
 class UsersEntry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: ''
     }
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
+  handleClick = (e) => {
+    const { user, changeView } = this.props;
     this.setState({
-      user: this.props.user
-    })
-
-    this.props.changeView(this.props.user);
+      user: user
+    }, () => changeView(user));
   }
 
-  render() {
+  render = () => {
+    const { user } = this.props;
     return (
-      <div className="list-user-entry" value={this.props.user} onClick={this.handleClick}>
-        {this.props.user}
+      <div className="list-user-entry" value={user} onClick={this.handleClick}>
+        {user}
       </div>
     )
   }
