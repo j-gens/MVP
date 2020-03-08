@@ -1,13 +1,14 @@
 import React from 'react';
 import UsersEntry from './UsersEntry.jsx';
 
-const Users = (props) => (
+
+const Users = ({ users, ...otherProps }) => (
   <div>
-    {props.users.map(user =>
-      <UsersEntry user={user} changeView={props.changeView} key={user} />
+    {users.map(user =>
+      <UsersEntry key={user} user={user} {...otherProps} />
     )}
   </div>
-)
+);
 
 
 export default Users;
