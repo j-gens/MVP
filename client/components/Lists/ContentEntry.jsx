@@ -1,14 +1,15 @@
 import React from 'react';
 
-const ListContentEntry = (props) => (
+
+const ListContentEntry = ({ arena: { arenaName, homeTeam, awayTeam, date } }) => (
   <tr className="content-list-table-row">
-    <td>{props.arena.arenaName}</td>
-    <td>{props.arena.homeTeam}</td>
-    <td>{props.arena.awayTeam}</td>
-    <td>{props.arena.date}</td>
+    <td>{arenaName}</td>
+    <td>{homeTeam}</td>
+    <td>{awayTeam}</td>
+    <td>{date}</td>
     <td className="row-hover-button">X</td>
   </tr>
-)
+);
 
 
 export default ListContentEntry;
