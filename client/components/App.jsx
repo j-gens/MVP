@@ -10,11 +10,9 @@ class App extends React.Component {
       imageUrl: '',
       arenas: []
     }
-
-    this.fetch = this.fetch.bind(this);
   }
 
-  fetch() {
+  fetch = () => {
     axios.get('/api/arenas/')
       .then((response) => {
         this.setState({
@@ -24,16 +22,14 @@ class App extends React.Component {
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => {
-        console.log('success', this.state.arenas);
-      })
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.fetch();
   }
 
-  render() {
+  render = () => {
+    const { arenas } = this.state;
     return (
       <div className="content-bin">
         <div className="content-image">
@@ -43,11 +39,12 @@ class App extends React.Component {
           <div className="list-user-title-top">
             Current NHL Arenas:
           </div>
-          <ArenaList arenas={this.state.arenas} />
+          <ArenaList arenas={arenas} />
         </div>
       </div>
     )
   }
 }
+
 
 export default App;
