@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const arenaSchema = mongoose.Schema({
   _id: Number,
   arenaName: String,
@@ -20,11 +21,13 @@ const userSchema = mongoose.Schema({
   userName: String
 })
 
-
 const Arena = mongoose.model('Arena', arenaSchema);
 const UserList = mongoose.model('UserList', userListSchema);
 const User = mongoose.model('User', userSchema)
 
-module.exports.Arena = Arena;
-module.exports.UserList = UserList;
-module.exports.User = User;
+
+module.exports = {
+  Arena,
+  UserList,
+  User,
+};
