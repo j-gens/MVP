@@ -4,23 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/j-gens/MVP.git"
+    "start:dev": "nodemon server/index.js",
+    "build": "webpack",
+    "test": "jest"
   },
   "author": "j-gens",
   "license": "MIT",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "axios": "^0.19.0",
     "csv-parser": "^2.3.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "mongoose": "^5.7.11",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
@@ -28,6 +27,7 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
     "nodemon": "^1.19.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
