@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import Header from './components/Header.jsx'
-import App from './components/App.jsx'
-import Lists from './components/Lists.jsx'
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<Header />, document.getElementById('header'));
+import App from './App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('app'));
 
-ReactDOM.render(<Lists />, document.getElementById('lists'));
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('app'));
