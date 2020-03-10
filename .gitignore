@@ -62,4 +62,4 @@ typings/
 
 bundled.js
 *.csv
-
+public/images/*
