@@ -6,7 +6,12 @@ import './header.styles.css';
 
 const Header = () => (
   <div className="header-bin">
-    ICE BUCKET LIST
+    <div className="header-title">
+      <Link to='/'>ICE BUCKET LIST</Link>
+    </div>
+    <div className="header-options">
+      Link
+    </div>
   </div>
 );
 
