@@ -10,7 +10,7 @@ const Header = () => (
       <Link to='/'>ICE BUCKET LIST</Link>
     </div>
     <div className="header-options">
-      Link
+      <img src="/images/hamburger-menu.svg" alt="menu" />
     </div>
   </div>
 );
