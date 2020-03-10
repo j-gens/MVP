@@ -1,0 +1,16 @@
+body {
+  box-sizing: border-box;
+  background-image: url('/images/bw-outdoor-rink.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-bin {
+  margin: 100px auto 0 auto;
+  align-content: center;
+  width: 90%;
+}
