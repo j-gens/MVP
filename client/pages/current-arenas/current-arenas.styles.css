@@ -1,0 +1,19 @@
+.current-arenas-bin {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-arenas-image {
+  width: 50%;
+}
+
+.current-arenas-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.current-arenas-list {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
