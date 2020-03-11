@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ContentList from '../../components/content-list/content-list.component.jsx';
+import { fetchArenas } from '../../methods/fetch.utils.js';
 
 import './current-arenas.styles.css';
 
@@ -9,11 +10,19 @@ class CurrentArenas extends React.Component {
   constructor() {
     super();
     this.state = {
+      listHeaders: ['arena name', 'home team', 'city', 'state/province'],
       currentArenas: [],
     }
   }
 
+  componentDidMount() {
+    fetchArenas((data) => {
+      this.setState({currentArenas: data});
+    });
+  }
+
   render() {
+    const { listHeaders, currentArenas } = this.state;
     return (
       <div className="current-arenas-bin">
         <div className="current-arenas-image">
@@ -21,7 +30,7 @@ class CurrentArenas extends React.Component {
         </div>
         <div className="current-arenas-list">
           <h2>Current Arenas:</h2>
-          <ContentList />
+          <ContentList listHeaders={listHeaders} arenas={currentArenas} />
         </div>
       </div>
     );
