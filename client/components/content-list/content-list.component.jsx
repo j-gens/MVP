@@ -11,15 +11,15 @@ const ContentList = ({ listHeaders, arenas }) => (
       <thead className="cl-table-header">
         <tr>
           {
-            listHeaders.map((header, index) =>
-            <td key={index}>{header.toUpperCase()}</td>)
+            listHeaders.map((header) =>
+            <td key={header}>{header.toUpperCase()}</td>)
           }
         </tr>
       </thead>
       <tbody className="cl-table-body">
         {
-          arenas.map(arena =>
-          <ContentListEntry arena={arena} />)
+          arenas.map((arena) =>
+          <ContentListEntry key={arena._id} arena={arena} />)
         }
       </tbody>
     </table>
