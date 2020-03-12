@@ -3,6 +3,8 @@ body {
   background-image: url('/images/bw-outdoor-rink.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -10,7 +12,7 @@ a {
 }
 
 .app-bin {
-  margin: 100px auto 0 auto;
+  margin: 20px auto 0 auto;
   align-content: center;
   width: 90%;
 }
