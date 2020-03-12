@@ -1,0 +1,7 @@
+.content-list-row {
+  font-size: 18px;
+}
+
+.content-list-row:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
