@@ -29,7 +29,7 @@ class CurrentArenas extends React.Component {
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/NHL_arenas.jpg" alt="map with nhl arena locations" />
         </div>
         <div className="current-arenas-list">
-          <h2>Current Arenas:</h2>
+          <span className="current-arenas-title">Current NHL Arenas (Spring 2020):</span>
           <ContentList listHeaders={listHeaders} arenas={currentArenas} />
         </div>
       </div>
