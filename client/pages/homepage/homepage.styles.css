@@ -1,0 +1,37 @@
+.homepage-bin {
+  position: relative;
+  height: 70vh;
+  color: whitesmoke;
+  text-shadow: 1px 1px black;
+}
+
+.homepage-title {
+  background-color: rgba(32, 13, 13, 0.6);
+  border-radius: 25px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.homepage-subtitle {
+  font-weight: 400;
+  font-size: 24px;
+  /* font-style: italic; */
+}
+
+.homepage-phrase {
+  background-color: rgba(32, 13, 13, 0.6);
+  border-radius: 25px;
+  padding: 20px;
+  position: absolute;
+  right: 0%;
+  top: 90%;
+}
+
+.homepage-subtitle-red {
+  color: rgb(255, 0, 0)
+}
