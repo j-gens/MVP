@@ -1,11 +1,12 @@
 import React from 'react';
 
-import ContentListEntry from '../content-list-entry/content-list-entry.component.jsx';
+import CurrentListEntry from '../current-list-entry/current-list-entry.component.jsx';
+import BucketListEntry from '../bucket-list-entry/bucket-list-entry.component.jsx';
 
 import './content-list.styles.css';
 
 
-const ContentList = ({ listHeaders, arenas }) => (
+const ContentList = ({ bucketList, listHeaders, arenas }) => (
   <div className="content-list-bin">
     <table className="cl-table">
       <thead className="cl-table-header">
@@ -18,8 +19,12 @@ const ContentList = ({ listHeaders, arenas }) => (
       </thead>
       <tbody className="cl-table-body">
         {
+          bucketList ?
           arenas.map((arena) =>
-          <ContentListEntry key={arena._id} arena={arena} />)
+          <BucketListEntry key={arena._id} arena={arena} />)
+          :
+          arenas.map((arena) =>
+          <CurrentListEntry key={arena._id} arena={arena} />)
         }
       </tbody>
     </table>
