@@ -4,16 +4,27 @@
 }
 
 .current-arenas-image {
-  width: 50%;
+  margin: auto;
+  width: 45%;
 }
 
 .current-arenas-image img {
   max-width: 100%;
   height: auto;
+  border-radius: 25px;
+  border: 1px solid black;
 }
 
 .current-arenas-list {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
+}
+
+.current-arenas-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(200, 0, 0);
+  text-shadow: 1px 1px black;
+  margin-bottom: 20px;
 }
