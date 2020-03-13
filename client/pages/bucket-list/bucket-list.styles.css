@@ -1,0 +1,13 @@
+.list-page-bin {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-page-form {
+  width: 40%;
+}
+
+.list-page-list {
+  width: 58%;
+}

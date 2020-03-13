@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './content-list-entry.styles.css';
+import './current-list-entry.styles.css';
 
 
-const ContentListEntry = ({ arena: { arenaName, team, city, stateProvince } }) => (
+const CurrentListEntry = ({ arena: { arenaName, team, city, stateProvince } }) => (
   <tr className="content-list-row">
     <td>{arenaName}</td>
     <td>{team}</td>
@@ -13,4 +13,4 @@ const ContentListEntry = ({ arena: { arenaName, team, city, stateProvince } }) =
 );
 
 
-export default ContentListEntry;
+export default CurrentListEntry;
