@@ -14,13 +14,15 @@
   position: absolute;
   top: 50%;
   font-size: 40px;
-  font-weight: 600;
+}
+
+.homepage-marker {
+  font-family: 'Permanent Marker', cursive;
+  border-bottom: 1px solid white;
 }
 
 .homepage-subtitle {
-  font-weight: 400;
   font-size: 24px;
-  /* font-style: italic; */
 }
 
 .homepage-phrase {
