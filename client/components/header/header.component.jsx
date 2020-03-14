@@ -5,12 +5,14 @@ import './header.styles.css';
 
 
 const Header = () => (
-  <div className="header-bin">
-    <div className="header-title">
-      <Link to='/'>ICE BUCKET LIST</Link>
-    </div>
-    <div className="header-options">
-      <img src="/images/hamburger-menu.svg" alt="menu" />
+  <div className='header-bin'>
+    <div className='header-spacing'>
+      <div className='header-title'>
+        <Link to='/'>Athletour</Link>
+      </div>
+      <div className='header-options'>
+        <img src='/images/hamburger-menu.svg' alt='menu' />
+      </div>
     </div>
   </div>
 );
