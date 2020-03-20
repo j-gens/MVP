@@ -1,0 +1,23 @@
+.signin-bin {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(32, 13, 13, 0.6);
+  border-radius: 25px;
+  padding: 30px;
+  color: whitesmoke;
+  text-shadow: 1px 1px black;
+}
+
+.signin-title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.signin-bin form {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
