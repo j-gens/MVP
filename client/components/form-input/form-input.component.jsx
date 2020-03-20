@@ -5,7 +5,7 @@ import './form-input.styles.css';
 
 const FormInput = ({ handleChange, label, ...otherProps }) => (
   <div className="form-input-bin">
-    <input className="form-input-field" onChange={handleChange} (...otherProps) />
+    <input className="form-input-field" onChange={handleChange} {...otherProps} />
     {
       label ?
       (<label className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}>
