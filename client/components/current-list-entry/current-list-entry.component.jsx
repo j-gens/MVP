@@ -4,7 +4,7 @@ import './current-list-entry.styles.css';
 
 
 const CurrentListEntry = ({ arena: { arenaName, team, city, stateProvince } }) => (
-  <tr className="content-list-row">
+  <tr className='content-list-row'>
     <td>{arenaName}</td>
     <td>{team}</td>
     <td>{city}</td>

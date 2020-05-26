@@ -25,14 +25,22 @@
   font-weight: 600;
   color: black;
   font-family: 'Permanent Marker', cursive;
-}
-
-.header-options {
-  font-size: 18px;
-  cursor: pointer;
   padding-top: 10px;
 }
 
-.header-options img {
-  height: 40px;
+.header-options {
+  font-size: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
 }
+
+.header-options a {
+  color: black;
+}
+
+/* .header-options img {
+  height: 40px;
+} */

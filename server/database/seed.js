@@ -3,15 +3,6 @@ const schema = require('./schemas.js');
 const fs = require('fs');
 const csv = require('csv-parser');
 
-/*
-const arenaSchema = new Schema({
-  _id: Number,
-  arenaName: String,
-  city: String,
-  stateProvince: String,
-  team: String
-})
-*/
 
 let i = 0;
 

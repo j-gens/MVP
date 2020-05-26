@@ -11,7 +11,9 @@ const Header = () => (
         <Link to='/'>Athletour</Link>
       </div>
       <div className='header-options'>
-        <img src='/images/hamburger-menu.svg' alt='menu' />
+        <Link to='/arenas'>CURRENT ARENAS</Link>
+        <Link to='/list'>MY LIST</Link>
+        <Link to='/login'>SIGN UP</Link>
       </div>
     </div>
   </div>
