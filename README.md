@@ -5,7 +5,7 @@
 * [Getting Started](https://github.com/j-gens/MVP-Athletour#getting-started)
 * [License](https://github.com/j-gens/MVP-Athletour#license)
 
-![alt hockey rink](https://j-gens-portfolio.s3-us-west-1.amazonaws.com/athletour-gen.jpg)
+![alt hockey rink](https://j-gens-portfolio.s3-us-west-1.amazonaws.com/athletour-gen.jpeg)
 
 ## Overview
 
