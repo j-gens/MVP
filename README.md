@@ -1,4 +1,5 @@
-# Athletour: Arena Tracking App
+# Athletour
+## Arena Tracking App
 
 * [Overview](https://github.com/j-gens/MVP-Athletour#overview)
 * [Technologies](https://github.com/j-gens/MVP-Athletour#technologies)
